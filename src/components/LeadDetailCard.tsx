@@ -1,10 +1,12 @@
+import {memo} from "react";
+
 type LeadProps = {
   name: string;
   company: string;
   status: string;
 };
 
-export default function LeadDetailCard({ name, company, status }: LeadProps) {
+function LeadDetailCardComponent({ name, company, status }: LeadProps) {
   return (
     <div className="border p-4 rounded shadow">
       <h2 className="text-xl font-bold">{name}</h2>
@@ -13,3 +15,6 @@ export default function LeadDetailCard({ name, company, status }: LeadProps) {
     </div>
   );
 }
+const LeadDetailCard = memo(LeadDetailCardComponent);
+
+export default LeadDetailCard;
